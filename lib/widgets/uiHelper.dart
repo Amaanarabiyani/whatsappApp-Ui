@@ -1,16 +1,18 @@
-
-
 import 'package:flutter/material.dart';
 
 class Uihelper {
   static CustomButton({required String name, required VoidCallback onTap}) {
     return SizedBox(
-      height: 35,
-      width: 300,
+      height: 45,
+      width: 350,
       child: ElevatedButton(
         onPressed: () {
           onTap();
         },
+        style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40),
+        )),
         child: Text(
           name,
           style: TextStyle(
