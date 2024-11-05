@@ -14,7 +14,7 @@ class Onboarding extends StatelessWidget {
           children: [
             Image.asset('assets/images/image 1.png'),
             SizedBox(
-              height: 20,
+              height: 40,
             ),
             Uihelper.customText(
               name: "Welcome To WhatsApp",
@@ -22,7 +22,7 @@ class Onboarding extends StatelessWidget {
               color: Color(0xFF000000),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +66,11 @@ class Onboarding extends StatelessWidget {
         name: 'Agree and Continue',
         onTap: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Login()));
+            context,
+            MaterialPageRoute(
+              builder: (context) => Login(),
+            ),
+          );
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
