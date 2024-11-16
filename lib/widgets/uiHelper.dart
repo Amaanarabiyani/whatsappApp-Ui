@@ -10,9 +10,10 @@ class Uihelper {
           onTap();
         },
         style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40),
-        )),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
+        ),
         child: Text(
           name,
           style: TextStyle(
