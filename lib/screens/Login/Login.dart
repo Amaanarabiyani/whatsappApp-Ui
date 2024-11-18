@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_ui_clone/Otp/otpscreen.dart';
 import 'package:whatsapp_ui_clone/widgets/uiHelper.dart';
 
 class Login extends StatefulWidget {
@@ -18,6 +19,7 @@ class _LoginState extends State<Login> {
     'India',
     'Japan',
   ];
+  final TextEditingController phonenumber = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -124,8 +126,9 @@ class _LoginState extends State<Login> {
                 width: 10,
               ),
               SizedBox(
-                width: 250,
+                width: 230,
                 child: TextFormField(
+                  controller: phonenumber,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     enabledBorder: UnderlineInputBorder(
@@ -147,8 +150,32 @@ class _LoginState extends State<Login> {
       ),
       floatingActionButton: Uihelper.CustomButton(
         name: 'Next',
-        onTap: () {},
+        onTap: () {
+          print('Button Tapped');
+          Login(phonenumber.text.toString());
+        },
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
+  }
+
+  Login(String phonenumber) {
+    if (phonenumber == "") {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Please Enter Phone Number"),
+          backgroundColor: Color(0xFF00A884),
+        ),
+      );
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Otpscreen(
+            phonenumber: phonenumber,
+          ),
+        ),
+      );
+    }
   }
 }
