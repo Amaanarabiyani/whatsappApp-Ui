@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whatsapp_ui_clone/profile/profilescreen.dart';
 import 'package:whatsapp_ui_clone/screens/Splash/splashscreen.dart';
-// import 'package:whatsapp_ui_clone/screens/home.dart';
 
 void main() {
   runApp(const MyApp());
